@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="unogame.css">
+</head>
+<body>
+	<div id="unoText">UNO</div>
+	<div id="result">
+	 <label>Cpu Score</label>
+	 <div id="cpuScore"></div>
+	 <label>PlayerScore</label>
+	 <div id="playerScore"></div>
+	 <label>Winner</label>
+	 <div id="win"></div>
+	</div>
+	<div id="cardBox">	
+    <div id="newgame" onclick="newGame()">New Game</div>
+ 	<div id="rules"><a href="unogamerules.html" target="_blank">Rules</a></div>
+ 	<div id="cpuPlayer">
+ 		<div class="cpucard">
+ 		<div  class="cpuCardClass">
+ 			<div class="backCard"></div>
+ 			<div class="innerCard">
+ 				<div style="background: orangered;"></div>
+ 				<div style="background: green;"></div>
+ 				<div style="background: yellow;"></div>
+ 				<div style="background: lightblue;"></div>
+ 				
+ 			</div>
+
+ 		</div>
+ 		<div  class="cpuCardClass">
+ 			<div class="backCard"></div>
+ 			<div class="innerCard">
+ 				<div style="background: orangered;"></div>
+ 				<div style="background: green;"></div>
+ 				<div style="background: yellow;"></div>
+ 				<div style="background: lightblue;"></div>
+ 				
+ 			</div>
+ 		</div>
+ 		<div  class="cpuCardClass">
+ 			<div class="backCard"></div>
+ 			<div class="innerCard">
+ 				<div style="background: orangered;"></div>
+ 				<div style="background: green;"></div>
+ 				<div style="background: yellow;"></div>
+ 				<div style="background: lightblue;"></div>
+ 				
+ 			</div>
+ 		</div>
+ 		<div  class="cpuCardClass">
+ 			<div class="backCard"></div>
+ 			<div class="innerCard">
+ 				<div style="background: orangered;"></div>
+ 				<div style="background: green;"></div>
+ 				<div style="background: yellow;"></div>
+ 				<div style="background: lightblue;"></div>
+ 				
+ 			</div>
+ 		</div>
+ 		<div  class="cpuCardClass">
+ 			<div class="backCard"></div>
+        	<div class="innerCard">
+ 				<div style="background: orangered;"></div>
+ 				<div style="background: green;"></div>
+ 				<div style="background: yellow;"></div>
+ 				<div style="background: lightblue;"></div>
+ 				
+ 			</div>
+
+ 		</div>
+ 		<div  class="cpuCardClass">
+ 			<div class="backCard"></div>
+ 			<div class="innerCard">
+ 				<div style="background: orangered;"></div>
+ 				<div style="background: green;"></div>
+ 				<div style="background: yellow;"></div>
+ 				<div style="background: lightblue;"></div>
+ 				
+ 			</div>
+ 			
+ 		</div>
+ 		<div class="cpuCardClass">
+ 			<div class="backCard"></div>
+ 			<div class="innerCard">
+ 				<div style="background: orangered;"></div>
+ 				<div style="background: green;"></div>
+ 				<div style="background: yellow;"></div>
+ 				<div style="background: lightblue;"></div>
+
+ 			</div>
+ 		</div>
+ 		
+    </div>
+
+ 	<div class="line"></div>
+ 	<div class="currentPlayer">Cpu</div>
+ 	</div>
+ 	<div id="middleContiner">
+		 	<button id="Uno" onclick="Uno()">UNO</button>
+		 	<div id="PlaceCards">
+		 		<div id="number"></div>
+		 	</div>
+		 	<div style="display: flex;">
+		 	<div id="Draw" onclick="drawCards()">DRAW</div>	
+		 </div>
+    </div>
+
+ 	<div id="Player">
+ 		<div id="playerCard">
+ 		<div  id="c1" class="playerCardClass" onclick="check(1)">
+ 				<div class="number" id="card1"></div>
+ 				<div class="innerCard"></div>
+
+ 		</div>
+ 		<div  id="c2" class="playerCardClass" onclick="check(2)">
+ 			    <div class="number" id="card2"></div> 
+ 				<div class="innerCard">
+ 				
+ 			</div>
+ 		</div>
+ 		<div  id="c3" class="playerCardClass" onclick="check(3)">
+ 			    <div class="number" id="card3"></div> 
+ 				<div class="innerCard">
+ 				
+ 			</div>
+ 		</div>
+ 		<div  id="c4" class="playerCardClass" onclick="check(4)">
+ 			    <div class="number" id="card4"></div> 
+ 				<div class="innerCard">
+ 				
+ 			</div>
+ 		</div>
+ 		<div   id="c5" class="playerCardClass" onclick="check(5)">
+ 			    <div class="number" id="card5"></div> 
+ 				<div class="innerCard">
+ 				
+ 			</div>
+ 		</div>
+ 		<div  id="c6" class="playerCardClass" onclick="check(6)">
+ 			    <div class="number" id="card6"></div> 
+ 				<div class="innerCard">
+ 				
+ 			</div>
+ 		</div>
+ 		<div  id="c7" class="playerCardClass" onclick="check(7)">
+ 			    <div class="number" id="card7"></div> 
+ 				<div class="innerCard">
+ 				
+ 			</div>
+ 		</div>
+ 			
+        </div>
+        <div class="line"></div>
+ 	<div class="currentPlayer">Player</div>
+ 	</div>
+ 	<div id="cpuStart" style="font-size: 0px;"></div>
+ 	<div id="playerStart" style="font-size: 0px;"></div>
+ 	<div id="ChanceText"></div>
+ 	<div id="colorChoose">
+ 	  <div style="display: flex;height: 71%;position: absolute;width: 100%;top: 30px;justify-content:space-evenly;">
+ 		<div class="colorChooseInnerCards" onclick='hide("red")' style="background-color: red" ></div>
+ 		<div class="colorChooseInnerCards" onclick="hide('#cac418')" style="background-color: #cac418"></div>
+ 		<div class="colorChooseInnerCards" onclick="hide('blue')" style="background-color: blue" ></div>
+ 		<div class="colorChooseInnerCards" onclick="hide('green')" style="background-color: green"></div>
+ 	</div>
+ 	</div>
+ </div>
+<script type="text/javascript" src="unogame.js"></script>
+</body>
+</html>
