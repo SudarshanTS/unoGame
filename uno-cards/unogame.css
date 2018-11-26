@@ -1,137 +1,323 @@
-body{
-	margin: 0px;
+body {
+  margin: 0px;
 }
-#unoText{
-	text-align: -webkit-center;
-    color: #ff3f00;
-    font-size: -webkit-xxx-large;
-    font-weight: bolder;
-    background: cadetblue;
-    width: 100%;
-    margin: auto;
+
+#unoText {
+  text-align: -webkit-center;
+  color: #ff3f00;
+  font-size: -webkit-xxx-large;
+  font-weight: bolder;
+  background: cadetblue;
+  width: 100%;
+  margin: auto;
 }
-#result{
-	height: 353px;
-    width: 27%;
-    background: #2196F3;
-    z-index: 9999;
+
+#result {
+  height: 353px;
+  width: 27%;
+  background: #2196F3;
+  z-index: 9999;
+  position: absolute;
+  display: none;
+  top: 25%;
+  font-size: 40px;
+}
+
+#cpuScore {
+  height: 55px;
+  text-align: center;
+}
+
+#playerScore {
+  height: 55px;
+  text-align: center;
+}
+
+#win {
+  height: 28%;
+  text-align: center;
+}
+
+#cardBox {
+  width: 100%;
+  height: 637px;
+  margin: auto;
+  background: seagreen;
+  user-select: none;
+}
+
+#rules {
+  height: 40px;
+  width: 86px;
+  position: fixed;
+  bottom: 10px;
+  left: 143px;
+  background: blanchedalmond;
+  border: 1px solid black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#rules a {
+  list-style-type: none;
+  text-decoration-line: none;
+  color: black;
+}
+
+#newgame {
+  height: 40px;
+  width: 86px;
+  position: fixed;
+  bottom: 10px;
+  left: 45px;
+  background: blanchedalmond;
+  border: 1px solid black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+#cpuPlayer {
+  height: 185px;
+  width: 68%;
+  margin: auto;
+  margin-bottom: 29px;
+}
+
+.cpucard {
+  display: flex;
+  margin-left: 154px;
+  width: 88%
+}
+
+.cpuCardClass {
+  height: 143px;
+  width: 14%;
+  background: black;
+  border-radius: 16px;
+  border: 4px solid white;
+  margin-right: -6%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  z-index: 999;
+}
+
+.backCard {
+  position: absolute;
+}
+
+.innerCard {
+  display: grid;
+  grid-template-columns: auto auto;
+  width: 66px;
+  height: 66px;
+  border: 4px solid white;
+  transform: rotate(45deg);
+  color: white;
+  font-size: 25px;
+}
+
+.line {
+  margin-left: 165px;
+  width: 66%;
+  height: 9px;
+  border-bottom: 1px solid white;
+  opacity: 1;
+  border-radius: 7px;
+}
+
+.currentPlayer {
+  margin-left: 165px;
+  color: white;
+  font-size: 22px;
+  opacity: 0.7;
+}
+
+#middleContiner {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  width: 100%;
+  height: 143px;
+  margin-bottom: 45px;
+}
+
+#Uno {
+  width: 112px;
+  background: brown;
+  color: white;
+  font-size: 33px;
+  border: none;
+  height: 81px;
+  margin-top: 27px;
+  margin-left: 27px;
+  cursor: pointer;
+  box-shadow: 5px 3px red;
+  border-radius: 50px;
+  outline-style: none;
+  pointer-events: none;
+  user-select: none;
+}
+
+#Uno:active {
+  background-color: brown;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+#PlaceCards {
+  height: 143px;
+  width: 29%;
+  background: black;
+  border-radius: 16px;
+  border: 4px solid white;
+  display: -webkit-inline-box;
+  color: white;
+  text-align: center;
+  margin-left: 45px;
+  overflow: hidden;
+}
+
+#number {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 54px;
+}
+
+#cpuPlaceCards {
+  height: 154px;
+  width: 7%;
+  background: black;
+  border-radius: 16px;
+  border: 4px solid white;
+  transform: rotate(43deg);
+  visibility: hidden;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  margin-left: -104px;
+  z-index: 2;
+  font-size: 53px;
+}
+
+#playerPlaceCards {
+  height: 143px;
+  width: 8%;
+  background: black;
+  border-radius: 16px;
+  border: 4px solid white;
+  margin-left: -90px;
+  transform: rotate(-61deg);
+  visibility: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
+  color: white;
+  z-index: 2;
+  position: absolute;
+  font-size: 53px;
+}
+
+#Draw {
+  height: 143px;
+  width: 39%;
+  background: black;
+  border-radius: 16px;
+  border: 4px solid white;
+  position: relative;
+  left: 38%;
+  margin-right: -147px;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
+  pointer-events: none;
+  user-select: none;
+}
+
+#Player {
+  height: 185px;
+  width: 68%;
+  margin: auto;
+}
+
+#playerCard {
+  display: flex;
+  margin-left: 154px;
+  width: 88%;
+  pointer-events: none;
+}
+
+.playerCardClass {
+  height: 143px;
+  width: 14%;
+  background: black;
+  border-radius: 16px;
+  border: 4px solid white;
+  margin-right: -6%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  z-index: 999;
+}
+
+.number {
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 36px;
+  position: absolute;
+  width: 9%;
+  height: 35%;
+}
+
+#ChanceText {
+  background: #121312;
+  width: 63%;
+  height: 50px;
+  margin: auto;
+  color: white;
+  text-align: center;
+  font-size: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#colorChoose {
+  position: relative;
+  top: -68%;
+  width: 50%;
+  height: 164px;
+  left: 24%;
+  background: azure;
+  display: none;
+}
+
+.colorChooseInnerCards {
+  width: 16%;
+  border-radius: 11px;
+  margin-left: 6px;
+}
+#drawBox{
+    display: flex;
     position: absolute;
     display: none;
-    top: 25%;
-    font-size: 40px;
 }
-#cpuScore{
-	height: 55px;
-    text-align: center;
-}
-#playerScore{
- 	height: 55px;
-    text-align: center;  
-}
-#win{
-    height: 28%;
-    text-align: center;
-}
-#cardBox{
-	width: 100%;
-    height: 637px;
-    margin: auto;
-    background: seagreen;
-     user-select:none;  
-}
-#rules{
-	height: 40px;
-    width: 86px;
-    position: fixed;
-    bottom: 10px;
-    left: 143px;
-    background: blanchedalmond;
-    border: 1px solid black;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  
-}
-#rules a{
-	list-style-type: none;
-	text-decoration-line: none;
-     color: black;
-}
-#newgame{
-	height: 40px;
-    width: 86px;
-    position: fixed;
-    bottom: 10px;
-    left: 45px;
-    background: blanchedalmond;
-    border: 1px solid black;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-}
-#cpuPlayer{
-    height: 185px;
-    width: 68%;
-    margin: auto; 
-    margin-bottom: 29px;
-
- }
-.cpucard{
-	display: flex;
-    margin-left: 154px;
-    width: 88%
-}
-.cpuCardClass{
-    height: 143px;
-    width: 14%;
-    background: black;
-    border-radius: 16px;
-    border: 4px solid white;
-    margin-right: -6%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-    z-index: 999;
-}
-.backCard{
-	position: absolute;
-}
-.innerCard{
-	display: grid;
-	grid-template-columns: auto auto;
-	width: 66px;
-    height: 66px;
-    border: 4px solid white;
-	transform: rotate(45deg);
-	color: white;
-	font-size: 25px;
-}
-.line{
-	margin-left: 165px;
-    width: 66%;
-    height: 9px;
-    border-bottom: 1px solid white;
-    opacity: 1;
-    border-radius:7px;
-}
-.currentPlayer{
-    margin-left: 165px;
-    color: white;
-    font-size: 22px;
-    opacity: 0.7;	
-}
-#middleContiner{
-		display:grid;
-		grid-template-columns: auto auto auto; 
-		width: 100%;
-		height: 143px;
-		margin-bottom: 45px;
-}
-#Uno{
-	width: 112px;
-    background: brown;
+.drawButtons{
+    width: 112px;
+    background: #2eeaaeb8;
     color: white;
     font-size: 33px;
     border: none;
@@ -139,148 +325,10 @@ body{
     margin-top: 27px;
     margin-left: 27px;
     cursor: pointer;
-    box-shadow: 5px 3px red;
+    box-shadow: 5px 3px #256f27;
     border-radius: 50px;
     outline-style: none;
-    pointer-events:none;
-     user-select:none;
-}
-#Uno:active {
-  background-color: brown;
-  box-shadow: 0 5px #666;
-  transform: translateY(4px);
-}
-#PlaceCards{
-	height: 143px;
-    width: 29%;
-    background: black;
-    border-radius: 16px;
-    border: 4px solid white;
-    display: -webkit-inline-box;
-    color: white;
-    text-align: center;
-    margin-left: 45px;
-    overflow: hidden;
-}
-#number{
-width: 100%;
-display: flex;
-align-items: center;
-justify-content: center;
-    font-size: 54px;
-}
-#cpuPlaceCards{
-    height: 154px;
-    width: 7%;
-    background: black;
-    border-radius: 16px;
-    border: 4px solid white;
-    transform: rotate(43deg);
-    visibility: hidden;
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: absolute;
-    margin-left: -104px;
-    z-index: 2;
-    font-size: 53px;
-  }  
-#playerPlaceCards{
-    height: 143px;
-    width: 8%;
-    background: black;
-    border-radius: 16px;
-    border: 4px solid white;
-    margin-left: -90px;
-    transform: rotate(-61deg);
-    visibility: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 30px;
-    color: white;
-    z-index: 2;
-    position: absolute;
-    font-size: 53px;
-  }  
-#Draw{
-   height: 143px;
-    width: 39%;
-    background: black;
-    border-radius: 16px;
-    border: 4px solid white;
-    position: relative;
-    left: 38%;
-    margin-right: -147px;
-    color:white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 30px;
-    pointer-events:none;
-    user-select:none;
-}
-#Player{
-	height: 185px;
-    width: 68%;
-    margin: auto; 
-   
-}
-#playerCard{
-	display: flex;
-    margin-left: 154px;
-    width: 88%;
-    pointer-events:none;
-}
-.playerCardClass{
-    height: 143px;
-    width: 14%;
-    background: black;
-    border-radius: 16px;
-    border: 4px solid white;
-    margin-right: -6%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-    z-index: 999;	
-
-}
-.number{
-	color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 36px;
-    position: absolute;
-    width: 9%;
-    height: 35%;
+    user-select: none;
     
-}
-#ChanceText{
-	background: #121312;
-    width: 63%;
-    height: 50px;
-    margin: auto;
-    color: white;
-    text-align: center;
-    font-size: 25px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-#colorChoose{
-	position: relative;
-    top: -68%;
-    width: 50%;
-    height: 164px;
-    left: 24%;
-    background: azure;
-    display: none;
-}
-.colorChooseInnerCards{
-	width: 16%;
-    border-radius: 11px;
-    margin-left: 6px;
+
 }
