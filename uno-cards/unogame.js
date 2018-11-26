@@ -1,5 +1,5 @@
 var cards = ["0", "1", "2", "3", "4", "5", "7", "8", "9", "S", "R", "W", "+2", "+4"];
-var color = ["red", "green", "blue", "#cac418"];
+var color = ["red", "green", "blue", "gold"];
 var num = document.getElementById("number");
 var c = document.getElementsByClassName("number");
 var playerClass = document.getElementById("playerCard");
@@ -108,7 +108,7 @@ function check(i) {
       num.innerHTML = cardsInnerValue.innerHTML;
       playerCardValue.outerHTML = "";
       playerplay = 1;
-      chance.innerHTML = "Your turn again"
+      chance.innerHTML = "Your turn again"  
     } else if (cardsInnerValue.innerHTML == "+2") {
       num.style.background = cardsInnerValue.style.background;
       num.innerHTML = cardsInnerValue.innerHTML;
@@ -138,7 +138,7 @@ function check(i) {
   win();
 }
 function playCpu() {
-  debugger;
+
   if (document.getElementsByClassName("playerCardClass").length == 0 || document.getElementsByClassName("cpuCardClass").length == 0) {
     chance.innerHTML = "Game Over"
   } else {
@@ -222,7 +222,7 @@ function checkCpu(i){
 
 }
 function checkOtherCardCpu(i){
-  debugger;
+
   if (document.getElementsByClassName('backCard')[i].innerHTML == "W") {
           num.style.background = color[Math.floor(Math.random() * 4)];
           num.innerHTML = "";
@@ -288,7 +288,7 @@ function drawTwoFourCards() {
 }
 
 function cpudrawCards() {
-  debugger;
+
   var x = document.getElementsByClassName("cpuCardClass").length;
   var addCpuCards = '<div class="cpuCardClass"><div class="backCard"></div><div class="innerCard"><div style="background: orangered;"></div><div style="background: green;"></div><div style="background: yellow;"></div><div style="background: lightblue;"></div></div></div>'
   document.getElementsByClassName("cpucard")[0].innerHTML += addCpuCards;
@@ -483,7 +483,21 @@ function scoreCard(turn) {
   }
 }
 function hide(value) {
-  colorChoice = value;
+  debugger;
+  switch(value){
+    case 1:
+        colorChoice="red";
+        break;
+    case 2:
+        colorChoice="#cac418";
+        break;
+    case 3:
+        colorChoice="blue";
+        break;
+    case 4:
+        colorChoice="green";
+        break;            
+  }
   num.style.background = colorChoice
   colorPick.style.display = "none";
   chance.innerHTML = "Color chances to" + colorChoice;
